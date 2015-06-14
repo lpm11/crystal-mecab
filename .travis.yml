@@ -14,3 +14,6 @@ script:
   - mecab-config --dicdir
   - mecab-config --libs
   - crystal spec | tee /dev/tty | grep "0 failures, 0 errors" -q
+notifications:
+  slack:
+    secure: ZYKX/x70cyE1RCqi9EOglaiPHHVOLgZug4LM+lCKROfxpcwBj7oFy574Eve9FB0JdJrH/KNRMRNGQn25wctUuB3d2YRFgMP6ErvbI1zQ8G4LijotcGRB0KTYARN/S4cqgMoLiM/ZG7BQSa3+qoxbwwjbFwBlIDmxLXMzRbqUVlczLfwr7Hw8tzO1mhTWvJkbQByzRcwl9JapmcsHZQQXGnM7AHjuGN7kpIxCj1bxBq4ZZQs8NnzVV4gYfO25vBmer3/Lz6FhaT0miPPJUiqprfkDeNFk8RiVH9ql4LmEYD5ZjyjlWLAHC0xOlagbyAXOU/m909d5IidleHq0hq79+ZBMFLn7YjO3l9ZMbxLLd2MF6D/0bcNNcD2X/GnqZ8AZZEZjjY4SMzlo86mKXgtm/6adLL+qE3MxwUt5nHHb9L+gR2lEyL+1wrYJX8cRb7D+8uAftEDw/BX5TOt/c12zi5Q2C2vSQntZ1m4bD0SW0kFP+Ml9bn70GyXVuWbt5E+uXtuOhfoII+0haTBfzmF7c9+XxM/I84vxktyUDT7dotFdmXw4V7AovnhedZU6qYcAKeQ7hkgCg4QWVTSCMO8XJaMJ/mRAe+xuVYP16+2BtAldouegj9snTe7UQGB45aofoxFbLDj7dns0e6snvI2yLyGe7RYSFViiqXDt9tBWeeQ=
