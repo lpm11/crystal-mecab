@@ -28,6 +28,16 @@ describe "lib_mecab", "#general" do
     model = LibMeCab.mecab_model_new2("--this-option-is-not-defined")
     model.null?.should be_true
   end
+
+  it "returns ipadic-utf8 information" do
+    model, tagger, lattice = initialize_mecab("")
+
+    info = LibMeCab.mecab_dictionary_info(tagger)
+    String.new(info.value.filename).should eq("#{ipadic()}/sys.dic")
+    String.new(info.value.charset).should match(/utf-?8/i)
+
+    finalize_mecab(model, tagger, lattice)
+  end
 end
 
 describe "lib_mecab", "#parse" do
