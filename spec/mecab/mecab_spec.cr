@@ -18,7 +18,7 @@ def finalize_mecab(model, tagger, lattice)
   LibMeCab.mecab_model_destroy(model)
 end
 
-describe "lib_mecab", "#parse" do
+describe "lib_mecab", "#general" do
   it "initializes the MeCab" do
     model, tagger, lattice = initialize_mecab("")
     finalize_mecab(model, tagger, lattice)
@@ -28,7 +28,9 @@ describe "lib_mecab", "#parse" do
     model = LibMeCab.mecab_model_new2("--this-option-is-not-defined")
     model.null?.should be_true
   end
+end
 
+describe "lib_mecab", "#parse" do
   it "segments a sentence into words" do
     sentence = "すもももももももものうち"
     expected = "すもも も もも も もも の うち"
